@@ -32,7 +32,7 @@ def plot_target_by_category(data: pd.DataFrame, feature: str, target: str = 'def
 
     sns.barplot(data=group_v, x=feature, hue=target, y='percent', ax= axes[0])
     for container in axes[0].containers:
-        labels = [f'{float(v.get_height()):.2f}%' for v in container]
+        labels = [f'{float(v.get_height()):.2f}' for v in container]
         axes[0].bar_label(container, labels=labels)
     axes[0].set_title(f'Процентное распределение таргета по группам в признаке {feature}')
 
